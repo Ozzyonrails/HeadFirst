@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Шар судьбы</title>
+</head>
+<body>
+<script>
+    let eightBall = {
+        index: 0,
+        advice: ['yes', 'no', 'maybe', 'not a chance'],
+        shake: function () {
+            this.index = Math.floor(Math.random() * 5);
+            if(this.index >= this.advice.length) {
+                this.index = 0;
+            }
+        },
+        look: function () {
+            return this.advice[this.index];
+        }
+    };
+
+    eightBall.shake();
+    console.log(eightBall.look());
+</script>
+</body>
+</html>
